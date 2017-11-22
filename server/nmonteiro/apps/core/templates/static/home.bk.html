@@ -1,0 +1,251 @@
+{% extends "static/base.html" %}
+
+{% block content %}
+<div class="home">
+  <div class="parallax-container top-container">
+    <div class="parallax">
+      <img src="{{STATIC_URL}}img/home/child.jpg" class="hide-on-small-and-down">
+      <img src="{{STATIC_URL}}img/home/child-mobile.jpg" class="show-on-small">
+    </div>
+    <div class="header row">
+      <div class="col s12 m11 offset-m1">
+        <div class="logo-container">
+          <a class="nmonteiro-logo big"></a>
+        </div>
+        <div class="headline-container">
+          <h1>Build micro apps in seconds</h1>
+          <p class="headline">
+            Share, create and run micro apps instantaneous for your<br>
+            IoT devices without coding or programming expertises.
+          </p>
+          <a class="waves-effect waves-light btn-large orange accent-2 scroll-to-div"
+             scroll-id="learn-more" scroll-offset="60">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="learn-more" class="section white learn-more">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center">
+          <h3>What is a micro app?</h3>
+          <p class="flow-text">
+            A micro app is a collection of tasks defined by the user triggered by and event, time or data change
+            on devices. In other words, it's a list of "when -> do" events understandable to any user, even without any
+            programming expertises. Since micro apps are running in a cloud, they can listen and run tasks
+            on multiple devices at the same time.
+          </p>
+        </div>
+      </div>
+      <div class="btn-container center">
+          <a class="waves-effect waves-light btn-large orange accent-3 scroll-to-div"
+             scroll-id="leave-email" scroll-offset="90">Create your first cloud app</a>
+      </div>
+    </div>
+  </div>
+  <div class="section how-it-works parallax-container">
+    <div class="parallax">
+      <img src="{{STATIC_URL}}img/home/how.jpg" class="hide-on-small-and-down">
+      <img src="{{STATIC_URL}}img/home/how-mobile.jpg" class="show-on-small">
+    </div>
+    <div class="content">
+      <div class="container">
+        <h3>How does it work?</h3>
+        <div class="row">
+          <div class="col s12 m10 offset-m1">
+            <div class="number"><span>1</span></div>
+            <h4>Connect your devices</h4>
+            <p class="flow-text">
+              Connect your devices to your DJINA account. Share them with your friends or make them public
+              to allow others to create apps with them.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m10 offset-m1">
+            <div class="number"><span>2</span></div>
+            <h4>Create your tasks</h4>
+            <p class="flow-text">
+              Enumerate the actions you want to do when some conditions on your devices are met.
+              Examples: When my car is less then 5 km from home, turn on the heater.
+              When the mobile of my child is father than 2 km from home, send me and him a notification.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m10 offset-m1">
+            <div class="number"><span>3</span></div>
+            <h4>Is ready to be used</h4>
+            <p class="flow-text">
+              After defining your tasks, the micro app is immediately ready to be used without any installation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section white pros">
+    <div class="container">
+      <div class="row center">
+        <div class="col s12 m10 offset-m1 l8 offset-l2">
+          <p class="flow-text">
+            Do you often feel software development isn't for you?<br>Not anymore!
+          </p>
+        </div>
+      </div>
+      <div class="row no-margin">
+        <div class="col s12 m6">
+          <div class="item">
+            <i class="material-icons blue-grey-text text-lighten-1">flash_on</i>
+            <h5>Micro apps in seconds</h5>
+            <p>
+              Create apps instantaneously and ready to use. Easy to edit/remove
+              tasks without restarting the full app.
+            </p>
+          </div>
+        </div>
+         <div class="col s12 m6">
+          <div class="item">
+            <i class="material-icons blue-grey-text text-lighten-1">group</i>
+            <h5>Do more, with your friends</h5>
+            <p>
+              Share devices and their functionalities with friends.
+              Use public resources and services to improve your capabilities.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row no-margin">
+        <div class="col s12 m6">
+          <div class="item">
+            <i class="material-icons blue-grey-text text-lighten-1">accessibility</i>
+            <h5>Easy to everyone</h5>
+            <p>
+              Use the visual interface to create and edit your ideas, making development accessible to everyone.
+            </p>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="item">
+            <i class="material-icons blue-grey-text text-lighten-1">devices</i>
+            <h5>Accessible everywhere</h5>
+            <p>
+              The apps will be running on cloud and they can be edited through any mobile device.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="divider" style="margin: 40px 0 30px;"></div>
+      <div id="leave-email" class="row center">
+        <div class="col s12 m10 offset-m1 l8 offset-l2">
+          <p class="flow-text" style="margin-bottom: 20px">
+            Leave your email and be the first to test DJINA. <br>
+            The first users will have full access for free.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <form id="join-email-form">
+          <div class="col s9 m5 offset-m2 l4 offset-l3">
+            <input id="join-email-input" type="email" placeholder="Leave here your email" class="join-email" required>
+          </div>
+          <button class="waves-effect waves-light btn-large orange accent-3 col s3 l2"
+            type="submit">Take me in</button>
+        </form>
+        <div id="join-email-success" class="col s12 center hide">
+          Thank you for joining us. We will be in touch with you soon.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-container founder-container">
+    <div class="parallax">
+      <img src="{{STATIC_URL}}img/home/founder.jpg" class="hide-on-small-and-down">
+      <img src="{{STATIC_URL}}img/home/founder-mobile.jpg" class="show-on-small">
+    </div>
+    <div class="text-container row">
+      <div class="col s12 m5 offset-m1">
+         <p class="flow-text">
+          “Over the years I have worked with several entrepreneurs and creative minds, who expressed unique
+          and innovative ideas that have often been put aside and forgotten, as a result of the immense
+          budget necessary for their production. It is not unusual for even a simple prototype to take
+          considerable amount of time, often many months, before it can be tested. It’s time to end this.
+          We need the success of an idea to be independent of the developer’s quality, time restrains and
+          resources. We want an idea to be implemented within hours, not weeks or months. We want to make
+          IoT development accessible to all."
+        </p>
+         <p class="flow-text">
+            “The future is going to be dominated by mass automation and regular usage of bots in every single
+            field of industry and engineering, including software development. Our team is working to create the proper
+            tools for this future vision be more human and accessible to everyone.”
+          </p>
+        <p class="info"><strong>Nelson Monteiro</strong> - Founder</p>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row center white-text">
+        <div class="col s12 m4 answer">
+          <i class="material-icons medium blue-grey-text">my_location</i>
+          <h6>Do you have a keen eye <br> to spot issues?</h6>
+          <a href="mailto:testers@nelsonmonteiro.eu" target="_blank"
+             class="waves-effect waves-light blue-grey-text text-lighten-2">
+            "Of course! Let me test the system."</a>
+        </div>
+        <div class="col s12 m4 answer">
+          <i class="material-icons medium blue-grey-text">lightbulb_outline</i>
+          <h6>Do you have the skills <br> to change the world?</h6>
+          <a href="mailto:jobs@nelsonmonteiro.eu" target="_blank"
+             class="waves-effect waves-light blue-grey-text text-lighten-2">
+            "Oh yes! I have been waiting for it."</a>
+        </div>
+        <div class="col s12 m4 answer">
+          <i class="material-icons medium blue-grey-text">event_seat</i>
+          <h6>Are you an investor <br> willing to embrace the future?</h6>
+          <a href="mailto:investors@nelsonmonteiro.eu" target="_blank"
+             class="waves-effect waves-light blue-grey-text text-lighten-2">
+            "Say no more! Take me on board."</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container">
+        <a class="nmonteiro-logo white"></a>
+        <span class="left">&copy;</span>
+        <span class="right">
+          <a href="mailto:contact@nelsonmonteiro.eu" target="_blank"
+             class="waves-effect waves-light white-text" >
+            <i class="fa fa-envelope fa-2x"></i></a>
+          <a href="https://www.facebook.com/DjinaAS/" target="_blank"
+             class="waves-effect waves-light white-text">
+            <i class="fa fa-facebook-square fa-2x"></i></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  $(document).ready(function(){
+     $('.parallax').parallax();
+  });
+
+  $('#join-email-form').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: '/api/users/join/',
+      method: 'post',
+      data: JSON.stringify({'email': $('#join-email-input').val() }),
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      success: function()  {
+        $('#join-email-success').removeClass('hide');
+        $('#join-email-form').addClass('hide');
+      }
+    })
+  });
+</script>
+{% endblock %}

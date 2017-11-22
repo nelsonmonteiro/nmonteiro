@@ -1,0 +1,156 @@
+{% load curriculum emails thumbnail %}
+{% get_curriculum as curriculum %}
+
+
+<div {% style "base" %}>
+  <div {% style "section" %}>
+    {{object.header|safe}}
+  </div>
+  <div style="background: #fafafa;">
+    <div {% style "action-section" "text-align: center;" %}>
+      <a {% style "button" %} href="{{curriculum.personal_information.website}}" target="_blank">Visit my website instead</a>
+    </div>
+  </div>
+  <div {% style "section" %}>
+    <h2 {% style "h2" %}>Work Experience</h2>
+
+    {% for experience in curriculum.work_experience %}
+      <div {% if not forloop.last %}{% style "experience" %}{% endif %}>
+        <div {% style "date" %}>{{experience.get_date_display}}</div>
+        <div><b>Organization:</b> {{experience.organization}}</div>
+        <div><b>Title:</b> {{experience.title}}</div>
+
+        {{experience.description|safe}}
+
+        {% with total_projects=experience.portfolio.count %}
+        {% for project in experience.portfolio.all %}
+          {% if forloop.first and total_projects > 1 %}
+            <h4 {% style "h4" %}>Main projects</h4>
+          {% endif %}
+
+          <div {% if not forloop.last %}{% style "project" %}{% endif %}>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" {% style "base" %}>
+              <tr>
+                <td width="200" style="padding: 14px 20px 0 0; vertical-align: top;">
+                  {% thumbnail project.image '500' as im %}
+                    <img src="{{ im.url }}" width="100%" />
+                  {% endthumbnail %}
+                </td>
+                <td style="vertical-align: top;">
+                  {% if project.project %}
+                    <h5 {% style "h5" %}>Project</h5>
+                    {{project.project}}
+                  {% endif %}
+
+                  {% if project.organization %}
+                    <h5 {% style "h5" %}>Organization</h5>
+                    {{project.organization}}
+                  {% endif %}
+
+                  <h5 {% style "h5" %}>About</h5>
+                  {{project.description|safe}}
+
+                  {% if project.main_activities %}
+                    <h5 {% style "h5" %}>Main activities</h5>
+                    {{project.main_activities|safe}}
+                  {% endif %}
+
+                  {% if project.key_technologies %}
+                    <h5 {% style "h5" %}>Key technologies</h5>
+                    {{project.key_technologies|safe}}
+                  {% endif %}
+
+                  {% if project.website %}
+                    <h5 {% style "h5" %}>Website</h5>
+                    <a {% style "a" %} href="{{project.website}}">{{project.website}}</a>
+                  {% endif %}
+                </td>
+              </tr>
+            </table>
+          </div>
+        {% endfor %}
+        {% endwith %}
+      </div>
+      {% endfor %}
+  </div>
+  <div style="background: #fafafa;">
+    <div {% style "section" %}>
+      <h2 {% style "h2" %}>Education</h2>
+      {% for education in curriculum.education %}
+      <div {% if not forloop.last %}{% style "education" %}{% endif %}>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" {% style "base" %}>
+          <tr>
+            <td>
+              <div {% style "date" %}>{{education.get_date_display}}</div>
+              <div class="organization"><b>Organization:</b> {{education.organization}}</div>
+              <div class="title"><b>Title:</b> {{education.title}}</div>
+            </td>
+            <td width="30" style="padding-top: 35px;">
+              {% thumbnail education.image '400' as im %}
+                <img class="image" src="{{ im.url }}" width="100%" />
+              {% endthumbnail %}
+            </td>
+          </tr>
+        </table>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div {% style "section" %}>
+    <h2 {% style "h2" %}>Personal Information</h2>
+
+    {% if curriculum.personal_information.date_of_birth %}
+    <div><b>Age:</b> {{curriculum.personal_information.age}} years old</div>
+    {% endif %}
+
+    {% if curriculum.personal_information.phone_number %}
+    <div><b>Phone:</b> {{curriculum.personal_information.phone_number}}</div>
+    {% endif %}
+
+    {% if curriculum.personal_information.email %}
+    <div>
+      <b>Email:</b>
+      <a {% style "a" %} href="mailto: {{curriculum.personal_information.email}}">
+        {{curriculum.personal_information.email}}
+      </a>
+    </div>
+    {% endif %}
+
+    {% if curriculum.personal_information.website %}
+    <div>
+      <b>Website:</b>
+      <a {% style "a" %} href="{{curriculum.personal_information.website}}">
+        {{curriculum.personal_information.website}}
+      </a>
+    </div>
+    {% endif %}
+
+    {% if curriculum.languages %}
+    <div>
+      <b>Languages:</b>
+      {% for language in curriculum.languages %}
+        {{language}}{% if language.mother_tongue %} (mother tongue){% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}.
+    </div>
+    {% endif %}
+
+    {% if curriculum.personal_information.other_skills %}
+      <h5 {% style "h5" %}>Other skills</h5>
+      {{curriculum.personal_information.other_skills|safe}}
+    {% endif %}
+
+    {% if curriculum.personal_information.hobbies %}
+      <h5 {% style "h5" %}>Hobbies</h5>
+      {{curriculum.personal_information.hobbies|safe}}
+    {% endif %}
+  </div>
+  <div style="background: #424242; color: white; font-size: 0.85em;">
+    <div {% style "footer-section" %}>
+      {{curriculum.personal_information.footer_text|safe}}
+    </div>
+  </div>
+  <div style="background: #212121;">
+    <div {% style "action-section" "text-align: center;" %}>
+      <a {% style "button" %} href="{{curriculum.personal_information.website}}" target="_blank">Visit my website</a>
+    </div>
+  </div>
+</div>

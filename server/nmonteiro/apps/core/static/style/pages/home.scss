@@ -1,0 +1,275 @@
+p {
+  margin: 14px 0;
+}
+
+h2 {
+  margin: 0 0 60px;
+  font-weight: 100;
+  font-size: 2.2rem;
+}
+
+h3 {
+  margin: 0 0 30px;
+  font-weight: 100;
+  font-size: 1.6rem;
+}
+
+h4 {
+  margin: 30px 0 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+h5 {
+  margin: 14px 0;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+}
+
+a.inherit {
+  color: inherit;
+}
+
+#navigation {
+  margin-bottom: -64px;
+  .name {
+      transition: opacity 500ms ease;
+      font-family: 'Amatic SC', sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-left: 15px;
+  }
+  &:not(.pinned) {
+    .name {
+      opacity: 0;
+    }
+  }
+}
+
+#experience.section {
+  padding-top: 124px;
+}
+
+.about-container {
+  height: auto;
+
+  h1 {
+    font-family: 'Amatic SC', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .role {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 10px 0 60px;
+  }
+
+  .flow-text {
+    font-size: 1.2em;
+    b { font-weight: 700; }
+  }
+
+  .text-container {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .more-button {
+    margin-top: 30px;
+  }
+}
+
+.experience-container {
+  .date {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .image {
+    margin-top: 14px;
+  }
+
+  .project-container {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.education-container {
+  .date {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .image {
+    margin-top: 38px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+
+footer {
+  &.page-footer { margin: 0; }
+
+  .footer-container {
+    font-size: .85rem;
+  }
+
+  .footer-copyright {
+    font-size: .8em;
+
+    .name {
+      font-family: 'Amatic SC', sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    a {
+      margin-left: 5px;
+      .fa {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+
+
+/*
+  OLD
+ */
+
+
+.section {
+  padding: 60px 0;
+  p:last-child {
+    margin-bottom: 0;
+  }
+  &.small {
+    padding: 20px 0;
+  }
+}
+
+.learn-more {
+  padding-bottom: 30px;
+
+  h3 {
+    font-weight: 300;
+  }
+  .flow-text {
+    font-weight: 200;
+  }
+}
+
+.how-it-works {
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  color: #fff;
+
+  h3 {
+    font-weight: 200;
+    margin-bottom: 60px;
+  }
+
+  h4 {
+    font-weight: 300;
+  }
+  .flow-text {
+    font-size: 1.2em;
+  }
+  .number span {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    border: 3px solid #fff;
+    font-size: 28px;
+    text-align: center;
+    line-height: 54px;
+  }
+
+  .row:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+
+.small-parallax {
+  height: 160px;
+}
+
+.pros {
+  padding-bottom: 0px;
+  text-align: left;
+
+  p.flow-text {
+    margin-bottom: 60px;
+  }
+
+  .row.no-margin {
+    margin: 0;
+  }
+
+  .item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+
+    h5 {
+      margin: 0 0 5px;
+      font-size: 1.1em;
+    }
+    p {
+      margin: 0;
+      font-size: 1em;
+    }
+    .material-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 2.6em;
+    }
+  }
+}
+
+.founder-container {
+  height: auto;
+
+  .flow-text {
+    font-size: 1.3em;
+    font-style: italic;
+  }
+  .text-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.btn-container {
+  padding: 20px 0;
+}
+
+
+input[type=email].join-email {
+  border: 1px solid #ccc;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  height: 53px;
+}

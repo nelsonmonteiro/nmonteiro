@@ -1,0 +1,2 @@
+#!/bin/sh
+python ./nmonteiro/configs/${DEPLOYMENT_TARGET:="common"}/manage.py $*
