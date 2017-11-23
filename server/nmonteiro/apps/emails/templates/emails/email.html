@@ -152,7 +152,7 @@
     <div {% style "action-section" "text-align: center;" %}>
       <a {% style "button" %} href="{{curriculum.personal_information.website}}" target="_blank">Visit my website</a>
       {% if send_button and user.is_superuser %}
-        <a {% style "button" %} href="{% url 'view_presentation_email' object.hash %}" target="_blank">Send email</a>
+        <a {% style "button" %} href="{% url 'send_presentation_email' object.hash %}">Send email</a>
       {% endif %}
     </div>
   </div>
