@@ -33,7 +33,7 @@
               <tr>
                 <td width="200" style="padding: 14px 20px 0 0; vertical-align: top;">
                   {% thumbnail project.image '500' as im %}
-                    <img src="{{ im.url }}" width="100%" />
+                    <img src="{{settings.PROJECT_DOMAIN}}{{ im.url }}" width="100%" />
                   {% endthumbnail %}
                 </td>
                 <td style="vertical-align: top;">
@@ -87,7 +87,7 @@
             </td>
             <td width="30" style="padding-top: 35px;">
               {% thumbnail education.image '400' as im %}
-                <img class="image" src="{{ im.url }}" width="100%" />
+                <img class="image" src="{{settings.PROJECT_DOMAIN}}{{ im.url }}" width="100%" />
               {% endthumbnail %}
             </td>
           </tr>
@@ -151,6 +151,10 @@
   <div style="background: #212121;">
     <div {% style "action-section" "text-align: center;" %}>
       <a {% style "button" %} href="{{curriculum.personal_information.website}}" target="_blank">Visit my website</a>
+      {% if send_button and user.is_superuser %}
+        <a {% style "button" %} href="{% url 'vi_presentation_email' object.hash %}" target="_blank">Send email</a>
+      {% endif %}
     </div>
   </div>
 </div>
+

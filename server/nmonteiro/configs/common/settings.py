@@ -17,6 +17,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+PROJECT_DOMAIN = 'http://127.0.0.1:8000'
 
 #AUTH_USER_MODEL = 'users.User'
 
