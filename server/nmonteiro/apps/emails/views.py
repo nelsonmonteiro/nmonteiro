@@ -1,5 +1,6 @@
 from django import http
 from django.urls import reverse
+from django.conf import settings
 from django.views.generic import DetailView
 from .models import PresentationEmail
 
@@ -13,6 +14,7 @@ class PresentationEmailDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PresentationEmailDetail, self).get_context_data(**kwargs)
         context['send_button'] = True
+        context['settings'] = settings
         return context
 
 

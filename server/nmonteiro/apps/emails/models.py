@@ -35,7 +35,7 @@ class PresentationEmail(BaseModel):
             message = 'Hi there! You are not able to receive html content on your email.' \
                       'Please go to %s to see your message. \n\n Thank you and best regards. \n' \
                       'Nelson.' % reverse('send_presentation_email', kwargs={'hash': self.hash})
-            html = render_to_string('emails/email.html', {'object': self})
+            html = render_to_string('emails/email.html', {'object': self, 'settings': settings})
             send_mail(self.subject, message, settings.DEFAULT_FROM_EMAIL, [self.email], html_message=html)
             self.is_sent = True
             self.sent_date = datetime.datetime.now(tz=pytz.UTC)

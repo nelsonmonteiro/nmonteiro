@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^emails/', include('apps.emails.urls')),
     # url(r'^api/', include('apps.core.urls')),
     url(r'^api/curriculum/', include('apps.curriculum.urls')),
+    url(r'^valispace/', include('apps.valispace.urls')),
 ]
 
 if settings.DEBUG:

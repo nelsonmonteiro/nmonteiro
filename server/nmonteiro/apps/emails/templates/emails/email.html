@@ -125,6 +125,15 @@
     </div>
     {% endif %}
 
+    {% if curriculum.personal_information.github %}
+    <div>
+      <b>GitHub:</b>
+      <a {% style "a" %} href="{{curriculum.personal_information.github}}">
+        {{curriculum.personal_information.github}}
+      </a>
+    </div>
+    {% endif %}
+
     {% if curriculum.languages %}
     <div>
       <b>Languages:</b>

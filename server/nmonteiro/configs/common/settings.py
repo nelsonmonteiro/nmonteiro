@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'apps.core',
     'apps.curriculum',
     'apps.emails',
+    'apps.valispace.functions',
 
 )
 
